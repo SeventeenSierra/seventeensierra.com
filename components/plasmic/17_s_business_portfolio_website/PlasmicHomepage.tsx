@@ -94,6 +94,7 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
+  freeBox?: Flex__<"div">;
   defaultPage?: Flex__<typeof DefaultPage>;
   contentHome?: Flex__<typeof ContentHome>;
 };
@@ -179,33 +180,42 @@ function PlasmicHomepage__RenderFunc(props: {
           }
         )}
       >
-        <DefaultPage
-          data-plasmic-name={"defaultPage"}
-          data-plasmic-override={overrides.defaultPage}
-          className={classNames("__wab_instance", sty.defaultPage, {
-            [sty.defaultPageglobal_mode_dark]: hasVariant(
-              globalVariants,
-              "mode",
-              "dark"
-            )
-          })}
+        <Stack__
+          as={"div"}
+          data-plasmic-name={"freeBox"}
+          data-plasmic-override={overrides.freeBox}
+          hasGap={true}
+          className={classNames(projectcss.all, sty.freeBox)}
         >
-          <ContentHome
-            data-plasmic-name={"contentHome"}
-            data-plasmic-override={overrides.contentHome}
-            className={classNames("__wab_instance", sty.contentHome)}
-            subHeadingSlot={
-              "Building secure web apps or human-centered security policies with a focus on robust protections and enjoyable experiences"
-            }
-          />
-        </DefaultPage>
+          <DefaultPage
+            data-plasmic-name={"defaultPage"}
+            data-plasmic-override={overrides.defaultPage}
+            className={classNames("__wab_instance", sty.defaultPage, {
+              [sty.defaultPageglobal_mode_dark]: hasVariant(
+                globalVariants,
+                "mode",
+                "dark"
+              )
+            })}
+          >
+            <ContentHome
+              data-plasmic-name={"contentHome"}
+              data-plasmic-override={overrides.contentHome}
+              className={classNames("__wab_instance", sty.contentHome)}
+              subHeadingSlot={
+                "Building secure web apps or human-centered security policies with a focus on robust protections and enjoyable experiences"
+              }
+            />
+          </DefaultPage>
+        </Stack__>
       </div>
     </React.Fragment>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "defaultPage", "contentHome"],
+  root: ["root", "freeBox", "defaultPage", "contentHome"],
+  freeBox: ["freeBox", "defaultPage", "contentHome"],
   defaultPage: ["defaultPage", "contentHome"],
   contentHome: ["contentHome"]
 } as const;
@@ -214,6 +224,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  freeBox: "div";
   defaultPage: typeof DefaultPage;
   contentHome: typeof ContentHome;
 };
@@ -278,6 +289,7 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    freeBox: makeNodeComponent("freeBox"),
     defaultPage: makeNodeComponent("defaultPage"),
     contentHome: makeNodeComponent("contentHome"),
 

@@ -186,7 +186,7 @@ function PlasmicDefaultPage__RenderFunc(props: {
         className={classNames(projectcss.all, sty.freeBox)}
       >
         <CircuitBoardsvg2Icon
-          className={classNames(projectcss.all, sty.svg__lRx3Y)}
+          className={classNames(projectcss.all, sty.svg__fbOhy)}
           role={"img"}
         />
       </div>
