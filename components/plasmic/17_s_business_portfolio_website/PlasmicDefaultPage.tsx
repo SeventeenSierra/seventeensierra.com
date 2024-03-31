@@ -59,9 +59,9 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import { Reveal } from "@plasmicpkgs/react-awesome-reveal";
 import Header from "../../Header"; // plasmic-import: lfIZg1_S09Kg/component
 import MenuItem from "../../MenuItem"; // plasmic-import: hq-LirU1Now3/component
+import { Reveal } from "@plasmicpkgs/react-awesome-reveal";
 import Footer from "../../Footer"; // plasmic-import: 4dc5wCf1vU40/component
 import Sidebar from "../../Sidebar"; // plasmic-import: fG_a-l8cHLzr/component
 
@@ -99,12 +99,12 @@ export const PlasmicDefaultPage__ArgProps = new Array<ArgPropType>("children");
 export type PlasmicDefaultPage__OverridesType = {
   root?: Flex__<"div">;
   freeBox?: Flex__<"div">;
-  reveal?: Flex__<typeof Reveal>;
   header?: Flex__<typeof Header>;
   home?: Flex__<typeof MenuItem>;
   services?: Flex__<typeof MenuItem>;
   about?: Flex__<typeof MenuItem>;
   menuItem?: Flex__<typeof MenuItem>;
+  reveal?: Flex__<typeof Reveal>;
   footer?: Flex__<typeof Footer>;
   sidebar?: Flex__<typeof Sidebar>;
 };
@@ -190,169 +190,149 @@ function PlasmicDefaultPage__RenderFunc(props: {
           role={"img"}
         />
       </div>
-      <Reveal
-        data-plasmic-name={"reveal"}
-        data-plasmic-override={overrides.reveal}
-        className={classNames("__wab_instance", sty.reveal)}
-        delay={2}
-        duration={750}
-        triggerOnce={true}
-      >
-        <div className={classNames(projectcss.all, sty.columns__vZqv)}>
-          <Stack__
-            as={"div"}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.column__fnAP)}
-          >
-            <div className={classNames(projectcss.all, sty.columns__bt9I)}>
-              <Stack__
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.column__cyvAk)}
-              >
-                <Header
-                  data-plasmic-name={"header"}
-                  data-plasmic-override={overrides.header}
-                  className={classNames("__wab_instance", sty.header)}
-                  menuSlot={
-                    <React.Fragment>
-                      <MenuItem
-                        data-plasmic-name={"home"}
-                        data-plasmic-override={overrides.home}
-                        className={classNames("__wab_instance", sty.home)}
-                        endIcon={
-                          <FaCircleDotRegularsvgIcon
-                            className={classNames(
-                              projectcss.all,
-                              sty.svg__a7P2I
-                            )}
-                            role={"img"}
-                          />
-                        }
-                        link={`/`}
-                        startIcon={
-                          <FaCircleDotRegularsvgIcon
-                            className={classNames(
-                              projectcss.all,
-                              sty.svg___9JfKd
-                            )}
-                            role={"img"}
-                          />
-                        }
-                      >
-                        {"01 - Home"}
-                      </MenuItem>
-                      <MenuItem
-                        data-plasmic-name={"services"}
-                        data-plasmic-override={overrides.services}
-                        className={classNames("__wab_instance", sty.services)}
-                        endIcon={
-                          <FaCircleDotRegularsvgIcon
-                            className={classNames(
-                              projectcss.all,
-                              sty.svg__y9ByW
-                            )}
-                            role={"img"}
-                          />
-                        }
-                        link={`/services`}
-                        startIcon={
-                          <FaCircleDotRegularsvgIcon
-                            className={classNames(
-                              projectcss.all,
-                              sty.svg__epwdt
-                            )}
-                            role={"img"}
-                          />
-                        }
-                      >
-                        {"02 - Services"}
-                      </MenuItem>
-                      <MenuItem
-                        data-plasmic-name={"about"}
-                        data-plasmic-override={overrides.about}
-                        className={classNames("__wab_instance", sty.about)}
-                        endIcon={
-                          <FaCircleDotRegularsvgIcon
-                            className={classNames(
-                              projectcss.all,
-                              sty.svg__bjpZa
-                            )}
-                            role={"img"}
-                          />
-                        }
-                        link={`/about`}
-                        startIcon={
-                          <FaCircleDotRegularsvgIcon
-                            className={classNames(
-                              projectcss.all,
-                              sty.svg__obcpy
-                            )}
-                            role={"img"}
-                          />
-                        }
-                      >
-                        {"03 - About"}
-                      </MenuItem>
-                      <MenuItem
-                        data-plasmic-name={"menuItem"}
-                        data-plasmic-override={overrides.menuItem}
-                        className={classNames("__wab_instance", sty.menuItem)}
-                        endIcon={
-                          <FaCircleDotRegularsvgIcon
-                            className={classNames(
-                              projectcss.all,
-                              sty.svg__fGcyV
-                            )}
-                            role={"img"}
-                          />
-                        }
-                        link={`/contact`}
-                        startIcon={
-                          <FaCircleDotRegularsvgIcon
-                            className={classNames(
-                              projectcss.all,
-                              sty.svg__ct7Fo
-                            )}
-                            role={"img"}
-                          />
-                        }
-                      >
-                        {"04 - Contact"}
-                      </MenuItem>
-                    </React.Fragment>
-                  }
-                />
-              </Stack__>
-            </div>
-            <div className={classNames(projectcss.all, sty.columns__uXLtN)}>
-              <Stack__
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.column___9Qu1M)}
+      <div className={classNames(projectcss.all, sty.columns__vZqv)}>
+        <Stack__
+          as={"div"}
+          hasGap={true}
+          className={classNames(projectcss.all, sty.column__fnAP)}
+        >
+          <div className={classNames(projectcss.all, sty.columns__bt9I)}>
+            <Stack__
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.column__cyvAk)}
+            >
+              <Header
+                data-plasmic-name={"header"}
+                data-plasmic-override={overrides.header}
+                className={classNames("__wab_instance", sty.header)}
+                menuSlot={
+                  <React.Fragment>
+                    <MenuItem
+                      data-plasmic-name={"home"}
+                      data-plasmic-override={overrides.home}
+                      className={classNames("__wab_instance", sty.home)}
+                      endIcon={
+                        <FaCircleDotRegularsvgIcon
+                          className={classNames(projectcss.all, sty.svg__a7P2I)}
+                          role={"img"}
+                        />
+                      }
+                      link={`/`}
+                      startIcon={
+                        <FaCircleDotRegularsvgIcon
+                          className={classNames(
+                            projectcss.all,
+                            sty.svg___9JfKd
+                          )}
+                          role={"img"}
+                        />
+                      }
+                    >
+                      {"01 - Home"}
+                    </MenuItem>
+                    <MenuItem
+                      data-plasmic-name={"services"}
+                      data-plasmic-override={overrides.services}
+                      className={classNames("__wab_instance", sty.services)}
+                      endIcon={
+                        <FaCircleDotRegularsvgIcon
+                          className={classNames(projectcss.all, sty.svg__y9ByW)}
+                          role={"img"}
+                        />
+                      }
+                      link={`/services`}
+                      startIcon={
+                        <FaCircleDotRegularsvgIcon
+                          className={classNames(projectcss.all, sty.svg__epwdt)}
+                          role={"img"}
+                        />
+                      }
+                    >
+                      {"02 - Services"}
+                    </MenuItem>
+                    <MenuItem
+                      data-plasmic-name={"about"}
+                      data-plasmic-override={overrides.about}
+                      className={classNames("__wab_instance", sty.about)}
+                      endIcon={
+                        <FaCircleDotRegularsvgIcon
+                          className={classNames(projectcss.all, sty.svg__bjpZa)}
+                          role={"img"}
+                        />
+                      }
+                      link={`/about`}
+                      startIcon={
+                        <FaCircleDotRegularsvgIcon
+                          className={classNames(projectcss.all, sty.svg__obcpy)}
+                          role={"img"}
+                        />
+                      }
+                    >
+                      {"03 - About"}
+                    </MenuItem>
+                    <MenuItem
+                      data-plasmic-name={"menuItem"}
+                      data-plasmic-override={overrides.menuItem}
+                      className={classNames("__wab_instance", sty.menuItem)}
+                      endIcon={
+                        <FaCircleDotRegularsvgIcon
+                          className={classNames(projectcss.all, sty.svg__fGcyV)}
+                          role={"img"}
+                        />
+                      }
+                      link={`/contact`}
+                      startIcon={
+                        <FaCircleDotRegularsvgIcon
+                          className={classNames(projectcss.all, sty.svg__ct7Fo)}
+                          role={"img"}
+                        />
+                      }
+                    >
+                      {"04 - Contact"}
+                    </MenuItem>
+                  </React.Fragment>
+                }
+              />
+            </Stack__>
+          </div>
+          <div className={classNames(projectcss.all, sty.columns__uXLtN)}>
+            <Stack__
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.column___9Qu1M)}
+            >
+              <Reveal
+                data-plasmic-name={"reveal"}
+                data-plasmic-override={overrides.reveal}
+                className={classNames("__wab_instance", sty.reveal)}
+                delay={3}
+                duration={750}
+                effect={"zoom"}
+                triggerOnce={true}
               >
                 {renderPlasmicSlot({
                   defaultContents: null,
                   value: args.children
                 })}
-              </Stack__>
-            </div>
-            <div className={classNames(projectcss.all, sty.columns__fahHi)}>
-              <Stack__
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.column__kxt1T)}
-              >
-                <Footer
-                  data-plasmic-name={"footer"}
-                  data-plasmic-override={overrides.footer}
-                  className={classNames("__wab_instance", sty.footer)}
-                />
-              </Stack__>
-            </div>
-          </Stack__>
-        </div>
-      </Reveal>
+              </Reveal>
+            </Stack__>
+          </div>
+          <div className={classNames(projectcss.all, sty.columns__fahHi)}>
+            <Stack__
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.column__kxt1T)}
+            >
+              <Footer
+                data-plasmic-name={"footer"}
+                data-plasmic-override={overrides.footer}
+                className={classNames("__wab_instance", sty.footer)}
+              />
+            </Stack__>
+          </div>
+        </Stack__>
+      </div>
       <Sidebar
         data-plasmic-name={"sidebar"}
         data-plasmic-override={overrides.sidebar}
@@ -366,30 +346,22 @@ const PlasmicDescendants = {
   root: [
     "root",
     "freeBox",
-    "reveal",
     "header",
     "home",
     "services",
     "about",
     "menuItem",
+    "reveal",
     "footer",
     "sidebar"
   ],
   freeBox: ["freeBox"],
-  reveal: [
-    "reveal",
-    "header",
-    "home",
-    "services",
-    "about",
-    "menuItem",
-    "footer"
-  ],
   header: ["header", "home", "services", "about", "menuItem"],
   home: ["home"],
   services: ["services"],
   about: ["about"],
   menuItem: ["menuItem"],
+  reveal: ["reveal"],
   footer: ["footer"],
   sidebar: ["sidebar"]
 } as const;
@@ -399,12 +371,12 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   freeBox: "div";
-  reveal: typeof Reveal;
   header: typeof Header;
   home: typeof MenuItem;
   services: typeof MenuItem;
   about: typeof MenuItem;
   menuItem: typeof MenuItem;
+  reveal: typeof Reveal;
   footer: typeof Footer;
   sidebar: typeof Sidebar;
 };
@@ -470,12 +442,12 @@ export const PlasmicDefaultPage = Object.assign(
   {
     // Helper components rendering sub-elements
     freeBox: makeNodeComponent("freeBox"),
-    reveal: makeNodeComponent("reveal"),
     header: makeNodeComponent("header"),
     home: makeNodeComponent("home"),
     services: makeNodeComponent("services"),
     about: makeNodeComponent("about"),
     menuItem: makeNodeComponent("menuItem"),
+    reveal: makeNodeComponent("reveal"),
     footer: makeNodeComponent("footer"),
     sidebar: makeNodeComponent("sidebar"),
 
