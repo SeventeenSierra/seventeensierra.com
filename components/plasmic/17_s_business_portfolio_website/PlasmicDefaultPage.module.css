@@ -4,8 +4,6 @@
   display: flex;
   width: 100%;
   height: 100%;
-  justify-content: space-between;
-  align-items: center;
   grid-column-start: 1 !important;
   grid-column-end: -1 !important;
   min-height: 0;
@@ -17,19 +15,18 @@
   }
 }
 .freeBox {
-  position: fixed;
-  width: auto;
-  height: auto;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
   max-width: 100%;
   overflow: hidden;
   transform: none;
   flex-shrink: 0;
-  left: -209px;
-  top: 77px;
-  z-index: 1;
-  right: 209px;
-  bottom: -77px;
-  display: none;
+  left: 0px;
+  top: 0px;
+  min-width: 0;
+  min-height: 0;
 }
 @media (max-width: 738px) {
   .freeBox {
@@ -44,17 +41,17 @@
     top: 0px;
   }
 }
-.svg__fbOhy {
+.svg__lRx3Y {
   position: absolute;
   object-fit: cover;
   opacity: 0.05;
   height: 1761px;
   width: 1437px;
-  right: -111px;
-  top: -90px;
+  right: -49px;
+  top: -132px;
 }
 @media (max-width: 738px) {
-  .svg__fbOhy {
+  .svg__lRx3Y {
     min-width: 200%;
     right: -531px;
     top: -153px;
@@ -75,18 +72,13 @@
 .columns__vZqv {
   display: flex;
   flex-direction: row;
-  position: fixed;
+  position: relative;
   width: 100%;
   height: 100%;
   justify-content: space-between;
   align-items: stretch;
-  flex-shrink: 0;
+  flex-shrink: 1;
   flex-wrap: wrap;
-  flex-grow: 1;
-  align-self: stretch;
-  left: 0px;
-  top: 0px;
-  z-index: 1;
   grid-column-start: 1 !important;
   grid-column-end: -1 !important;
   min-height: 0;
@@ -362,7 +354,7 @@
 }
 .column___9Qu1M > :global(.__wab_flex-container) {
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   min-width: 0;
   margin-top: calc(0px - var(--token-mOMUgWDDGuJX));
@@ -383,7 +375,7 @@
 }
 .columns__fahHi {
   display: flex;
-  position: sticky;
+  position: relative;
   flex-direction: row;
   width: 100%;
   height: auto;
@@ -391,10 +383,11 @@
   flex-shrink: 1;
   max-width: 90%;
   flex-wrap: nowrap;
-  left: 0px;
-  top: 0px;
+  left: auto;
+  top: auto;
   z-index: 1;
-  align-self: baseline;
+  right: auto;
+  bottom: auto;
   min-width: 0;
   padding: 8px;
 }

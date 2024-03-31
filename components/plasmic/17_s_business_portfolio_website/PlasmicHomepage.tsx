@@ -94,7 +94,6 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
-  freeBox?: Flex__<"div">;
   defaultPage?: Flex__<typeof DefaultPage>;
   contentHome?: Flex__<typeof ContentHome>;
 };
@@ -140,7 +139,7 @@ function PlasmicHomepage__RenderFunc(props: {
   return (
     <React.Fragment>
       <Head>
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="summary" />
         <title key="title">{PlasmicHomepage.pageMetadata.title}</title>
         <meta
           key="og:title"
@@ -152,32 +151,6 @@ function PlasmicHomepage__RenderFunc(props: {
           name="twitter:title"
           content={PlasmicHomepage.pageMetadata.title}
         />
-        <meta
-          key="description"
-          name="description"
-          content={PlasmicHomepage.pageMetadata.description}
-        />
-        <meta
-          key="og:description"
-          property="og:description"
-          content={PlasmicHomepage.pageMetadata.description}
-        />
-        <meta
-          key="twitter:description"
-          name="twitter:description"
-          content={PlasmicHomepage.pageMetadata.description}
-        />
-        <meta
-          key="og:image"
-          property="og:image"
-          content={PlasmicHomepage.pageMetadata.ogImageSrc}
-        />
-        <meta
-          key="twitter:image"
-          name="twitter:image"
-          content={PlasmicHomepage.pageMetadata.ogImageSrc}
-        />
-        <link ref="canonical" href={PlasmicHomepage.pageMetadata.canonical} />
       </Head>
 
       <style>{`
@@ -186,77 +159,66 @@ function PlasmicHomepage__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={projectcss.plasmic_page_wrapper}>
-        <div
-          data-plasmic-name={"root"}
-          data-plasmic-override={overrides.root}
-          data-plasmic-root={true}
-          data-plasmic-for-node={forNode}
-          className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
-            projectcss.plasmic_tokens,
-            plasmic_core_css.plasmic_tokens,
-            plasmic_semantic_css.plasmic_tokens,
-            plasmic_icon_css.plasmic_tokens,
-            plasmic_typography_css.plasmic_tokens,
-            plasmic_button_css.plasmic_tokens,
-            plasmic_menu_item_css.plasmic_tokens,
-            plasmic_input_css.plasmic_tokens,
-            sty.root,
-            {
-              [plasmic_core_css.global_mode_dark]: hasVariant(
-                globalVariants,
-                "mode",
-                "dark"
-              ),
-              [sty.rootglobal_mode_dark]: hasVariant(
-                globalVariants,
-                "mode",
-                "dark"
-              )
-            }
-          )}
+      <div
+        data-plasmic-name={"root"}
+        data-plasmic-override={overrides.root}
+        data-plasmic-root={true}
+        data-plasmic-for-node={forNode}
+        className={classNames(
+          projectcss.all,
+          projectcss.root_reset,
+          projectcss.plasmic_default_styles,
+          projectcss.plasmic_mixins,
+          projectcss.plasmic_tokens,
+          plasmic_core_css.plasmic_tokens,
+          plasmic_semantic_css.plasmic_tokens,
+          plasmic_icon_css.plasmic_tokens,
+          plasmic_typography_css.plasmic_tokens,
+          plasmic_button_css.plasmic_tokens,
+          plasmic_menu_item_css.plasmic_tokens,
+          plasmic_input_css.plasmic_tokens,
+          sty.root,
+          {
+            [plasmic_core_css.global_mode_dark]: hasVariant(
+              globalVariants,
+              "mode",
+              "dark"
+            ),
+            [sty.rootglobal_mode_dark]: hasVariant(
+              globalVariants,
+              "mode",
+              "dark"
+            )
+          }
+        )}
+      >
+        <DefaultPage
+          data-plasmic-name={"defaultPage"}
+          data-plasmic-override={overrides.defaultPage}
+          className={classNames("__wab_instance", sty.defaultPage, {
+            [sty.defaultPageglobal_mode_dark]: hasVariant(
+              globalVariants,
+              "mode",
+              "dark"
+            )
+          })}
         >
-          <Stack__
-            as={"div"}
-            data-plasmic-name={"freeBox"}
-            data-plasmic-override={overrides.freeBox}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox)}
-          >
-            <DefaultPage
-              data-plasmic-name={"defaultPage"}
-              data-plasmic-override={overrides.defaultPage}
-              className={classNames("__wab_instance", sty.defaultPage, {
-                [sty.defaultPageglobal_mode_dark]: hasVariant(
-                  globalVariants,
-                  "mode",
-                  "dark"
-                )
-              })}
-            >
-              <ContentHome
-                data-plasmic-name={"contentHome"}
-                data-plasmic-override={overrides.contentHome}
-                className={classNames("__wab_instance", sty.contentHome)}
-                subHeadingSlot={
-                  "Building secure web apps or human-centered security policies with a focus on robust protections and enjoyable experiences"
-                }
-              />
-            </DefaultPage>
-          </Stack__>
-        </div>
+          <ContentHome
+            data-plasmic-name={"contentHome"}
+            data-plasmic-override={overrides.contentHome}
+            className={classNames("__wab_instance", sty.contentHome)}
+            subHeadingSlot={
+              "Building secure web apps or human-centered security policies with a focus on robust protections and enjoyable experiences"
+            }
+          />
+        </DefaultPage>
       </div>
     </React.Fragment>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "freeBox", "defaultPage", "contentHome"],
-  freeBox: ["freeBox", "defaultPage", "contentHome"],
+  root: ["root", "defaultPage", "contentHome"],
   defaultPage: ["defaultPage", "contentHome"],
   contentHome: ["contentHome"]
 } as const;
@@ -265,7 +227,6 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  freeBox: "div";
   defaultPage: typeof DefaultPage;
   contentHome: typeof ContentHome;
 };
@@ -330,7 +291,6 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    freeBox: makeNodeComponent("freeBox"),
     defaultPage: makeNodeComponent("defaultPage"),
     contentHome: makeNodeComponent("contentHome"),
 
@@ -341,11 +301,9 @@ export const PlasmicHomepage = Object.assign(
     // Page metadata
     pageMetadata: {
       title: "Seventeen Sierra, LLC",
-      description:
-        "Botique Cybersecurity, Emerging Technology and Digital Transformation Consultancy run by Alyssa Feola\nBuilding secure web apps or human-centered security policies with a focus on robust protections and enjoyable experiences",
-      ogImageSrc:
-        "https://site-assets.plasmic.app/7c4513030fd6bde37ea67deac126b091.png",
-      canonical: "seventeensierra.com"
+      description: "",
+      ogImageSrc: "",
+      canonical: ""
     }
   }
 );
