@@ -140,8 +140,6 @@ function PlasmicContentHome__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
-  const currentUser = useCurrentUser?.() || {};
-
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsohEUf6Jd0EV8(),
     mode: useMode()

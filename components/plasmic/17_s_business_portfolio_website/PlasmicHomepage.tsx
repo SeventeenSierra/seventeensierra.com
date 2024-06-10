@@ -129,8 +129,6 @@ function PlasmicHomepage__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
-  const currentUser = useCurrentUser?.() || {};
-
   const globalVariants = ensureGlobalVariants({
     mode: useMode(),
     screen: useScreenVariantsohEUf6Jd0EV8()

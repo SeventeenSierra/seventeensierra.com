@@ -85,6 +85,7 @@
   flex-direction: row;
   flex-shrink: 1;
   min-width: 0;
+  --plsmc-rc-col-gap: 0px;
   padding: 24px;
 }
 .aboutColumns > :global(.__wab_flex-container) {
@@ -106,9 +107,6 @@
   > picture
   > img {
   margin-left: 48px;
-}
-.aboutColumns {
-  --plsmc-rc-col-gap: 0px;
 }
 .aboutColumns > :global(.__wab_flex-container) > :nth-child(2n + 1) {
   width: calc((100% - 2 * var(--plsmc-rc-col-gap, 0px)) * 3 / 12);

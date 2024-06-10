@@ -1597,8 +1597,7 @@
           "componentImportPath": "@plasmicpkgs/react-awesome-reveal"
         }
       ],
-      "customFunctions": [],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "teUZ7d8BEHskoXuvEf1pBj",
@@ -1867,7 +1866,7 @@
     {
       "projectId": "nnAfd7uGSka2TBy9ktGmJn",
       "projectApiToken": "i6ZjHIxUBcQWJa0qiAonJYTcLx8OYm6nt8ByFGMnRuW3dDqZUSHTZL6pshVA9B530V4GRDG4xHPoFnS3RNj0w",
-      "projectName": "17S Business Portfolio Website",
+      "projectName": "Portfolio Site",
       "version": "latest",
       "cssFilePath": "plasmic/17_s_business_portfolio_website/plasmic.module.css",
       "components": [
@@ -2198,6 +2197,6 @@
   "nextjsConfig": {
     "pagesDir": "../pages"
   },
-  "cliVersion": "0.1.327",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.327/dist/plasmic.schema.json"
+  "cliVersion": "0.1.330",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.330/dist/plasmic.schema.json"
 }

@@ -131,8 +131,6 @@ function PlasmicFooter__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
-  const currentUser = useCurrentUser?.() || {};
-
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantseDj4FTEjj2U(),
     mode: useMode(),
